@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'ffi-gphoto2'
+gem "paperclip", "~> 6.0.0"
+gem 'aws-sdk'
 
 
 group :development, :test do
