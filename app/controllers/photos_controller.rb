@@ -1,7 +1,12 @@
-class PhotoController < ApplicationController
-  def index
-    @camera = GPhoto2::Camera.first
+require 'gphoto2'
 
+class PhotosController < ApplicationController
+  def index
+    if GPhoto2::Camera.all.count > 0
+      @camera = GPhoto2::Camera.first
+    else
+      @camera = nil
+    end
   end
 
   def create
@@ -10,6 +15,7 @@ class PhotoController < ApplicationController
     @photo = Photo.new(photo_params)
     @photo.image = file
     @photo.save
+    render action: 'index'
   end
 
   private

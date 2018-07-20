@@ -1,9 +1,9 @@
 class AddPaperclipToPhotos < ActiveRecord::Migration[5.1]
   def self.up
-    add_attachment :photo, :image
+    add_attachment :photos, :image
   end
 
   def self.down
-    remove_attachment :photo, :image
+    remove_attachment :photos, :image
   end
 end
